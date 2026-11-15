@@ -22,6 +22,10 @@ include(
     ":pangu-compose-rui",
 )
 
+if (file("demo").exists()) {
+    include(":demo", ":demo-android")
+}
+
 // Local development consumes sibling checkouts of pangu.kt and RUI without publishing.
 // When a directory is absent, the declared Maven coordinates are resolved instead.
 listOf("../pangu-kt", "../rui-compose")

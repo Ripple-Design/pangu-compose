@@ -38,6 +38,18 @@ workspace/
 
 Without the sibling checkouts, dependency resolution falls back to Maven, which requires published artifacts. `pangu-compose-rui` declares `art.rippledesign:compose-rui:1.0.0` and only resolves once RUI is published.
 
+## Demo
+
+The `demo` module keeps one `DemoApp()` in `commonMain` and adds a thin entry per platform:
+
+- Desktop (JVM): `./gradlew :demo:run`
+- Android: `./gradlew :demo-android:assembleDebug` (APK) or `:demo-android:installDebug` with a device attached; application id `art.rippledesign.pangu.compose.demo`
+- Web (JS): `./gradlew :demo:jsBrowserDevelopmentRun`
+- Web (Wasm): `./gradlew :demo:wasmJsBrowserDevelopmentRun`
+- iOS: `demo/src/iosMain/kotlin/art/rippledesign/pangu/compose/demo/MainViewController.kt` exposes `MainViewController()` for an Xcode host app (build requires macOS)
+
+The demo renders each sample string twice: the raw string through RUI's `RText`, then the same string through `PanguText`. Nothing else is shown, so the spacing difference is the only thing on screen.
+
 ## License
 
 Released under the [MIT License](LICENSE).

@@ -5,6 +5,7 @@ android-minSdk = "24"
 compose = "1.12.2"
 compose-material3 = "1.9.0"
 kotlin = "2.4.21"
+kotlinx-browser = "0.5.0"
 maven-publish = "0.36.0"
 
 [libraries]
@@ -13,8 +14,10 @@ compose-material = { module = "org.jetbrains.compose.material:material", version
 compose-material3 = { module = "org.jetbrains.compose.material3:material3", version.ref = "compose-material3" }
 compose-runtime = { module = "org.jetbrains.compose.runtime:runtime", version.ref = "compose" }
 compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "compose" }
+kotlinx-browser = { module = "org.jetbrains.kotlinx:kotlinx-browser", version.ref = "kotlinx-browser" }
 
 [plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
 android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 compose-multiplatform = { id = "org.jetbrains.compose", version.ref = "compose" }
